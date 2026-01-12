@@ -47,34 +47,63 @@ export const galleryImages = [
 
 export const menuItems = [
   {
-    size: "1.5kg",
-    serves: "10-12 people",
-    startingPrice: "3000/=",
-    description: "Perfect for intimate gatherings"
+    tier: "1.5 KG",
+    flavors: [
+      { name: "Vanilla/Lemon", price: "3000/=" },
+      { name: "Chocolate", price: "3200/=" },
+      { name: "Vanilla Oreo", price: "3400/=" },
+      { name: "Bubblegum", price: "3500/=" },
+      { name: "Marble", price: "3600/=" },
+      { name: "Red Velvet", price: "4000/=" }
+    ]
   },
   {
-    size: "2kg",
-    serves: "15-18 people",
-    startingPrice: "4000/=",
-    description: "Ideal for celebrations"
+    tier: "2.0 KG",
+    flavors: [
+      { name: "Vanilla/Lemon", price: "4000/=" },
+      { name: "Chocolate", price: "4400/=" },
+      { name: "Bubblegum/Vanilla Oreo", price: "5000/=" },
+      { name: "Marble", price: "5200/=" },
+      { name: "Red Velvet", price: "6000/=" }
+    ]
   }
 ];
 
 export const addOns = [
-  { name: "Fresh Flowers", price: "500/=" },
-  { name: "Edible Prints", price: "800/=" },
-  { name: "Gold Leaf Accents", price: "1000/=" },
-  { name: "Custom Topper", price: "600/=" }
+  { 
+    name: "Fresh Flowers", 
+    price: "500/=",
+    image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80",
+    description: "Seasonal blooms arranged beautifully"
+  },
+  { 
+    name: "Edible Prints", 
+    price: "800/=",
+    image: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&q=80",
+    description: "Custom images or designs"
+  },
+  { 
+    name: "Gold Leaf Accents", 
+    price: "1000/=",
+    image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&q=80",
+    description: "Elegant metallic touches"
+  },
+  { 
+    name: "Custom Topper", 
+    price: "600/=",
+    image: "https://images.unsplash.com/photo-1562440499-64c9a5e55a3e?w=400&q=80",
+    description: "Personalized cake decorations"
+  }
 ];
 
 export const cakeFlavors = [
   "Vanilla",
-  "Chocolate",
-  "Red Velvet",
   "Lemon",
-  "Strawberry",
-  "Carrot Cake",
-  "Marble"
+  "Chocolate",
+  "Vanilla Oreo",
+  "Bubblegum",
+  "Marble",
+  "Red Velvet"
 ];
 
 export const frostingTypes = [

@@ -9,6 +9,7 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: #ffe0e6;
 }
 
 code {
@@ -18,7 +19,7 @@ code {
 
 @layer base {
   :root {
-        --background: 0 0% 100%;
+        --background: 350 100% 94%;
         --foreground: 0 0% 3.9%;
         --card: 0 0% 100%;
         --card-foreground: 0 0% 3.9%;
@@ -45,8 +46,9 @@ code {
         --radius: 0.5rem;
         
         /* Custom Brand Colors */
-        --plum: 291 46% 32%;
+        --plum: 331 44% 27%;
         --blush: 350 100% 94%;
+        --soft-pink: 350 100% 94%;
     }
   .dark {
         --background: 0 0% 3.9%;
@@ -87,13 +89,13 @@ code {
 
 @layer utilities {
   .text-plum {
-    color: hsl(var(--plum));
+    color: #592239;
   }
   .bg-plum {
-    background-color: hsl(var(--plum));
+    background-color: #592239;
   }
   .border-plum {
-    border-color: hsl(var(--plum));
+    border-color: #592239;
   }
   .text-blush {
     color: hsl(var(--blush));
@@ -103,5 +105,8 @@ code {
   }
   .border-blush {
     border-color: hsl(var(--blush));
+  }
+  .bg-soft-pink {
+    background-color: #ffe0e6;
   }
 }
