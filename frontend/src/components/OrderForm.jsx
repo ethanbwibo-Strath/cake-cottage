@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { submitOrderInquiry, cakeFlavors, frostingTypes } from '../mock';
+import { cakeFlavors, frostingTypes } from '../mock';
 import { Clock, Send } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -7,6 +7,10 @@ import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { toast } from 'sonner';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const OrderForm = () => {
   const [formData, setFormData] = useState({
@@ -28,9 +32,10 @@ export const OrderForm = () => {
     setIsSubmitting(true);
 
     try {
-      const result = await submitOrderInquiry(formData);
-      if (result.success) {
-        toast.success(result.message);
+      const response = await axios.post(`${API}/orders`, formData);
+      
+      if (response.data.success) {
+        toast.success(response.data.message);
         setFormData({
           name: '',
           phone: '',
@@ -45,6 +50,7 @@ export const OrderForm = () => {
         });
       }
     } catch (error) {
+      console.error('Order submission error:', error);
       toast.error('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
