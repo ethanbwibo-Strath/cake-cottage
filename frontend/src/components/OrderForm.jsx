@@ -56,18 +56,8 @@ export const OrderForm = () => {
   };
 
   return (
-    <section id="order" className="py-20 bg-white relative overflow-hidden">
-      {/* Subtle corner floral decoration */}
-      <div className="absolute top-10 right-10 w-44 h-44 opacity-8 pointer-events-none">
-        <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 140 Q20 100, 50 82 Q38 52, 68 35 Q82 25, 96 35 Q126 52, 114 82 Q144 100, 144 140" 
-                stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="42" cy="108" r="12" stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="72" cy="125" r="16" stroke="#592239" strokeWidth="0.8" fill="none" />
-        </svg>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="order" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6 shadow-md">
