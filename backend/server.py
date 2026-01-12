@@ -91,7 +91,7 @@ async def create_order_inquiry(order_data: OrderInquiryCreate):
         }
         
         # Save to database
-        result = await db.order_inquiries.insert_one(order_dict)
+        await db.order_inquiries.insert_one(order_dict)
         
         # Send email notification (non-blocking)
         try:
