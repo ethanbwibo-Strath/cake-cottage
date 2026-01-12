@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Flower2 } from 'lucide-react';
 
 export const Header = () => {
   return (
@@ -8,9 +7,9 @@ export const Header = () => {
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            {/* Logo placeholder */}
+            {/* Logo placeholder - simple circle */}
             <div className="w-12 h-12 bg-plum rounded-full flex items-center justify-center overflow-hidden">
-              <Flower2 className="w-7 h-7 text-white" />
+              <span className="text-white font-bold text-xl">C</span>
             </div>
             <span className="text-2xl font-bold text-plum">Cake.cottag3</span>
           </Link>
@@ -38,9 +37,8 @@ export const Header = () => {
           </div>
           <a
             href="#order"
-            className="bg-plum text-white px-6 py-2 rounded-full hover:bg-plum/90 transition-all duration-300 hover:shadow-lg flex items-center gap-2"
+            className="bg-plum text-white px-6 py-2 rounded-full hover:bg-plum/90 transition-all duration-300 hover:shadow-lg"
           >
-            <Flower2 className="w-4 h-4" />
             Order Now
           </a>
         </div>
