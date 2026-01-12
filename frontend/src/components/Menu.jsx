@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
 import { menuItems, addOns } from '../mock';
-import { Cake, Plus, Flower2 } from 'lucide-react';
+import { Cake, Plus } from 'lucide-react';
 
 export const Menu = () => {
   const [hoveredAddon, setHoveredAddon] = useState(null);
 
   return (
     <section id="menu" className="py-20 bg-white relative overflow-hidden">
-      {/* Floral background decoration */}
-      <Flower2 className="absolute top-20 left-5 w-24 h-24 text-plum/5" />
-      <Flower2 className="absolute bottom-20 right-5 w-32 h-32 text-plum/5" />
+      {/* Subtle corner floral decoration */}
+      <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 180 Q20 120, 60 100 Q40 60, 80 40 Q100 20, 120 40 Q160 60, 140 100 Q180 120, 180 180" 
+                stroke="#592239" strokeWidth="1" fill="none" />
+          <circle cx="50" cy="130" r="15" stroke="#592239" strokeWidth="1" fill="none" />
+          <circle cx="90" cy="150" r="20" stroke="#592239" strokeWidth="1" fill="none" />
+        </svg>
+      </div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 opacity-10 pointer-events-none transform rotate-180">
+        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 180 Q20 120, 60 100 Q40 60, 80 40 Q100 20, 120 40 Q160 60, 140 100 Q180 120, 180 180" 
+                stroke="#592239" strokeWidth="1" fill="none" />
+          <circle cx="50" cy="130" r="15" stroke="#592239" strokeWidth="1" fill="none" />
+          <circle cx="90" cy="150" r="20" stroke="#592239" strokeWidth="1" fill="none" />
+        </svg>
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6 shadow-md">
-            <Cake className="w-8 h-8 text-plum" />
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
             Menu & Pricing
           </h2>
-          {/* Floral divider */}
-          <div className="flex justify-center gap-2 mb-4">
-            <Flower2 className="w-5 h-5 text-plum/40" />
-            <Flower2 className="w-4 h-4 text-plum/60" />
-            <Flower2 className="w-5 h-5 text-plum/40" />
-          </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             Choose your perfect cake size and flavor combination
           </p>
@@ -35,10 +40,7 @@ export const Menu = () => {
           {menuItems.map((tier, tierIndex) => (
             <div key={tierIndex} className="bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-plum/20">
               <div className="bg-plum text-white px-6 py-4">
-                <h3 className="text-2xl font-bold flex items-center gap-2">
-                  <Flower2 className="w-6 h-6" />
-                  {tier.tier} Tier
-                </h3>
+                <h3 className="text-2xl font-bold">{tier.tier} Tier</h3>
               </div>
               <div className="p-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -57,13 +59,12 @@ export const Menu = () => {
           ))}
         </div>
 
-        {/* Add-ons with hover image effect */}
+        {/* Add-ons with hover image replacement */}
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 text-2xl font-bold text-plum">
               <Plus className="w-6 h-6" />
               Premium Add-ons
-              <Flower2 className="w-6 h-6" />
             </div>
             <p className="text-gray-600 mt-2">Hover to see examples</p>
           </div>
@@ -71,28 +72,27 @@ export const Menu = () => {
             {addOns.map((addon, index) => (
               <div
                 key={index}
-                className="relative bg-white rounded-xl p-6 shadow-md border-2 border-plum/10 hover:border-plum/40 transition-all duration-300 cursor-pointer"
+                className="relative bg-white rounded-xl p-6 shadow-md border-2 border-plum/10 hover:border-plum/40 transition-all duration-300 cursor-pointer overflow-hidden h-48"
                 onMouseEnter={() => setHoveredAddon(index)}
                 onMouseLeave={() => setHoveredAddon(null)}
               >
-                <div className="flex items-center gap-2 mb-2">
-                  <Flower2 className="w-5 h-5 text-plum" />
-                  <h3 className="font-semibold text-plum text-lg">{addon.name}</h3>
+                {/* Default content */}
+                <div className={`transition-opacity duration-300 ${hoveredAddon === index ? 'opacity-0' : 'opacity-100'}`}>
+                  <h3 className="font-semibold text-plum text-lg mb-2">{addon.name}</h3>
+                  <p className="text-2xl font-bold text-gray-800 mb-2">{addon.price}</p>
+                  <p className="text-sm text-gray-600">{addon.description}</p>
                 </div>
-                <p className="text-2xl font-bold text-gray-800 mb-2">{addon.price}</p>
-                <p className="text-sm text-gray-600">{addon.description}</p>
                 
-                {/* Hover image popup */}
+                {/* Hover image overlay */}
                 {hoveredAddon === index && (
-                  <div className="absolute left-full ml-4 top-0 z-50 w-64 bg-white rounded-xl shadow-2xl border-2 border-plum/30 overflow-hidden animate-in fade-in zoom-in duration-200">
+                  <div className="absolute inset-0 rounded-xl overflow-hidden">
                     <img 
                       src={addon.image} 
                       alt={addon.name}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="p-4">
-                      <h4 className="font-semibold text-plum mb-2">{addon.name}</h4>
-                      <p className="text-sm text-gray-600">{addon.description}</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-plum/80 to-transparent flex items-end">
+                      <p className="text-white font-semibold p-4">{addon.name}</p>
                     </div>
                   </div>
                 )}
