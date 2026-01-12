@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { submitOrderInquiry, cakeFlavors, frostingTypes } from '../mock';
-import { Calendar, Clock, Send } from 'lucide-react';
+import { Calendar, Clock, Send, Flower2 } from 'lucide-react';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
@@ -56,27 +56,40 @@ export const OrderForm = () => {
   };
 
   return (
-    <section id="order" className="py-20 bg-gradient-to-b from-white to-blush/20">
-      <div className="container mx-auto px-6">
+    <section id="order" className="py-20 bg-white relative overflow-hidden">
+      {/* Floral background decoration */}
+      <Flower2 className="absolute top-10 left-5 w-32 h-32 text-plum/5" />
+      <Flower2 className="absolute bottom-10 right-5 w-40 h-40 text-plum/5" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-plum/10 rounded-full mb-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-pink-100 rounded-full mb-6 shadow-md">
               <Send className="w-8 h-8 text-plum" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
               Order Your Cake
             </h2>
+            {/* Floral divider */}
+            <div className="flex justify-center gap-2 mb-4">
+              <Flower2 className="w-5 h-5 text-plum/40" />
+              <Flower2 className="w-4 h-4 text-plum/60" />
+              <Flower2 className="w-5 h-5 text-plum/40" />
+            </div>
             <p className="text-lg text-gray-700">
               Fill out the form below and we'll get back to you within 24 hours
             </p>
           </div>
 
           {/* Important Notice */}
-          <div className="bg-plum/10 border-l-4 border-plum rounded-lg p-6 mb-8">
+          <div className="bg-pink-100 border-l-4 border-plum rounded-lg p-6 mb-8">
             <div className="flex items-start gap-3">
               <Clock className="w-6 h-6 text-plum flex-shrink-0 mt-1" />
               <div>
-                <h3 className="font-semibold text-plum text-lg mb-2">Important Notice</h3>
+                <h3 className="font-semibold text-plum text-lg mb-2 flex items-center gap-2">
+                  <Flower2 className="w-5 h-5" />
+                  Important Notice
+                </h3>
                 <ul className="text-gray-700 space-y-1">
                   <li>• <strong>48-hour notice required</strong> for all orders</li>
                   <li>• Available <strong>Monday – Saturday</strong> only</li>
@@ -87,7 +100,7 @@ export const OrderForm = () => {
           </div>
 
           {/* Order Form */}
-          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 border border-plum/10">
+          <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8 border-2 border-plum/20">
             <div className="space-y-6">
               {/* Personal Information */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,8 +163,8 @@ export const OrderForm = () => {
                       <SelectValue placeholder="Select size" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1.5kg">1.5kg (10-12 people)</SelectItem>
-                      <SelectItem value="2kg">2kg (15-18 people)</SelectItem>
+                      <SelectItem value="1.5kg">1.5 KG</SelectItem>
+                      <SelectItem value="2kg">2.0 KG</SelectItem>
                       <SelectItem value="custom">Custom Size</SelectItem>
                     </SelectContent>
                   </Select>
@@ -261,8 +274,9 @@ export const OrderForm = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-plum hover:bg-plum/90 text-white py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl disabled:opacity-50"
+                className="w-full bg-plum hover:bg-plum/90 text-white py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-xl disabled:opacity-50 flex items-center justify-center gap-2"
               >
+                <Flower2 className="w-5 h-5" />
                 {isSubmitting ? 'Submitting...' : 'Submit Order Inquiry'}
               </Button>
             </div>
