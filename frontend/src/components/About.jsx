@@ -1,12 +1,18 @@
 import React from 'react';
-import { Heart, Flower2 } from 'lucide-react';
+import { Heart } from 'lucide-react';
 
 export const About = () => {
   return (
     <section id="about" className="py-20 bg-soft-pink relative overflow-hidden">
-      {/* Floral background decoration */}
-      <Flower2 className="absolute top-10 right-10 w-32 h-32 text-plum/5" />
-      <Flower2 className="absolute bottom-10 left-10 w-40 h-40 text-plum/5" />
+      {/* Subtle corner floral decoration */}
+      <div className="absolute top-10 right-10 w-40 h-40 opacity-8 pointer-events-none">
+        <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 130 Q20 90, 50 75 Q35 45, 65 30 Q80 20, 95 30 Q125 45, 110 75 Q140 90, 140 130" 
+                stroke="#592239" strokeWidth="0.8" fill="none" />
+          <circle cx="40" cy="100" r="12" stroke="#592239" strokeWidth="0.8" fill="none" />
+          <circle cx="70" cy="115" r="15" stroke="#592239" strokeWidth="0.8" fill="none" />
+        </svg>
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
@@ -17,12 +23,6 @@ export const About = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-plum mb-6">
               Our Story
             </h2>
-            {/* Floral divider */}
-            <div className="flex justify-center gap-2 mb-6">
-              <Flower2 className="w-5 h-5 text-plum/40" />
-              <Flower2 className="w-4 h-4 text-plum/60" />
-              <Flower2 className="w-5 h-5 text-plum/40" />
-            </div>
           </div>
           
           <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
@@ -35,10 +35,8 @@ export const About = () => {
             <p>
               From elegant tiered wedding cakes adorned with fresh roses and gold accents to delightful bento cakes perfect for intimate moments, we pour our heart into every creation. We specialize in custom designs that reflect your personality and vision.
             </p>
-            <p className="text-center text-plum font-medium text-xl pt-4 flex items-center justify-center gap-2">
-              <Flower2 className="w-6 h-6" />
+            <p className="text-center text-plum font-medium text-xl pt-4">
               Let us bake happiness into your next celebration.
-              <Flower2 className="w-6 h-6" />
             </p>
           </div>
         </div>
