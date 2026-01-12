@@ -6,26 +6,8 @@ export const Menu = () => {
   const [hoveredAddon, setHoveredAddon] = useState(null);
 
   return (
-    <section id="menu" className="py-20 bg-white relative overflow-hidden">
-      {/* Subtle corner floral decoration */}
-      <div className="absolute top-0 left-0 w-48 h-48 opacity-10 pointer-events-none">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 180 Q20 120, 60 100 Q40 60, 80 40 Q100 20, 120 40 Q160 60, 140 100 Q180 120, 180 180" 
-                stroke="#592239" strokeWidth="1" fill="none" />
-          <circle cx="50" cy="130" r="15" stroke="#592239" strokeWidth="1" fill="none" />
-          <circle cx="90" cy="150" r="20" stroke="#592239" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 opacity-10 pointer-events-none transform rotate-180">
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 180 Q20 120, 60 100 Q40 60, 80 40 Q100 20, 120 40 Q160 60, 140 100 Q180 120, 180 180" 
-                stroke="#592239" strokeWidth="1" fill="none" />
-          <circle cx="50" cy="130" r="15" stroke="#592239" strokeWidth="1" fill="none" />
-          <circle cx="90" cy="150" r="20" stroke="#592239" strokeWidth="1" fill="none" />
-        </svg>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="menu" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
             Menu & Pricing

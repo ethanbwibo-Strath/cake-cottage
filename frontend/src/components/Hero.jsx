@@ -9,24 +9,6 @@ export const Hero = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-300 rounded-full blur-3xl"></div>
       </div>
       
-      {/* Subtle corner floral decorations */}
-      <div className="absolute top-10 left-10 w-32 h-32 opacity-10 pointer-events-none">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 90 Q10 60, 30 50 Q20 30, 40 20 Q50 10, 60 20 Q80 30, 70 50 Q90 60, 90 90" 
-                stroke="#592239" strokeWidth="0.5" fill="none" />
-          <circle cx="25" cy="65" r="8" stroke="#592239" strokeWidth="0.5" fill="none" />
-          <circle cx="45" cy="75" r="10" stroke="#592239" strokeWidth="0.5" fill="none" />
-        </svg>
-      </div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 opacity-10 pointer-events-none transform rotate-180">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 90 Q10 60, 30 50 Q20 30, 40 20 Q50 10, 60 20 Q80 30, 70 50 Q90 60, 90 90" 
-                stroke="#592239" strokeWidth="0.5" fill="none" />
-          <circle cx="25" cy="65" r="8" stroke="#592239" strokeWidth="0.5" fill="none" />
-          <circle cx="45" cy="75" r="10" stroke="#592239" strokeWidth="0.5" fill="none" />
-        </svg>
-      </div>
-      
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto space-y-8">
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-plum leading-tight">

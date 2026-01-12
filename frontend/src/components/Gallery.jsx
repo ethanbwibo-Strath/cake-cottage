@@ -9,18 +9,8 @@ export const Gallery = () => {
     : galleryImages.filter(img => img.category === filter);
 
   return (
-    <section id="gallery" className="py-20 bg-soft-pink relative overflow-hidden">
-      {/* Subtle corner floral decoration */}
-      <div className="absolute bottom-10 left-10 w-48 h-48 opacity-8 pointer-events-none">
-        <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 160 Q20 110, 55 90 Q40 55, 75 35 Q90 25, 105 35 Q140 55, 125 90 Q160 110, 160 160" 
-                stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="45" cy="120" r="13" stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="80" cy="140" r="18" stroke="#592239" strokeWidth="0.8" fill="none" />
-        </svg>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="gallery" className="py-20 bg-soft-pink">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
             Our Creations

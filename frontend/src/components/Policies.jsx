@@ -71,18 +71,8 @@ export const Policies = () => {
   ];
 
   return (
-    <section id="policies" className="py-20 bg-soft-pink relative overflow-hidden">
-      {/* Subtle corner floral decoration */}
-      <div className="absolute top-20 left-10 w-40 h-40 opacity-8 pointer-events-none">
-        <svg viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20 130 Q20 90, 50 75 Q35 45, 65 30 Q80 20, 95 30 Q125 45, 110 75 Q140 90, 140 130" 
-                stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="40" cy="100" r="12" stroke="#592239" strokeWidth="0.8" fill="none" />
-          <circle cx="70" cy="115" r="15" stroke="#592239" strokeWidth="0.8" fill="none" />
-        </svg>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="policies" className="py-20 bg-soft-pink">
+      <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
