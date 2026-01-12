@@ -113,13 +113,3 @@ export const frostingTypes = [
   "Fondant",
   "Ganache"
 ];
-
-// Mock function to simulate form submission
-export const submitOrderInquiry = async (formData) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      console.log("Order inquiry submitted:", formData);
-      resolve({ success: true, message: "Order inquiry received! We'll contact you within 24 hours." });
-    }, 1000);
-  });
-};
