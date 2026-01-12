@@ -68,6 +68,61 @@ async def get_status_checks():
     
     return status_checks
 
+# Order Inquiry Routes
+@api_router.post("/orders")
+async def create_order_inquiry(order_data: OrderInquiryCreate):
+    try:
+        # Create order object
+        order_dict = {
+            "id": str(uuid.uuid4()),
+            "name": order_data.name,
+            "phone": order_data.phone,
+            "email": order_data.email,
+            "cake_size": order_data.cakeSize,
+            "flavor": order_data.flavor,
+            "frosting": order_data.frosting,
+            "delivery_date": order_data.deliveryDate,
+            "budget": order_data.budget,
+            "custom_requests": order_data.customRequests,
+            "message": order_data.message,
+            "status": "pending",
+            "created_at": datetime.now(timezone.utc),
+            "updated_at": datetime.now(timezone.utc)
+        }
+        
+        # Save to database
+        result = await db.order_inquiries.insert_one(order_dict)
+        
+        # Send email notification (non-blocking)
+        try:
+            send_order_notification_email(order_dict)
+        except Exception as email_error:
+            logger.error(f"Email notification failed: {str(email_error)}")
+            # Don't fail the request if email fails
+        
+        return {
+            "success": True,
+            "message": "Order inquiry received! We'll contact you within 24 hours.",
+            "order_id": order_dict["id"]
+        }
+    except Exception as e:
+        logger.error(f"Failed to create order inquiry: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to process order inquiry")
+
+@api_router.get("/orders")
+async def get_order_inquiries():
+    try:
+        orders = await db.order_inquiries.find().sort("created_at", -1).to_list(1000)
+        # Convert ObjectId to string for JSON serialization
+        for order in orders:
+            order["_id"] = str(order["_id"])
+            order["created_at"] = order["created_at"].isoformat() if isinstance(order["created_at"], datetime) else order["created_at"]
+            order["updated_at"] = order["updated_at"].isoformat() if isinstance(order["updated_at"], datetime) else order["updated_at"]
+        return {"success": True, "orders": orders}
+    except Exception as e:
+        logger.error(f"Failed to fetch orders: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to fetch orders")
+
 # Include the router in the main app
 app.include_router(api_router)
 
