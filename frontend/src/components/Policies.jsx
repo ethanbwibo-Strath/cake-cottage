@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion';
-import { Truck, Clock, DollarSign, Calendar } from 'lucide-react';
+import { Truck, Clock, DollarSign, Calendar, Flower2 } from 'lucide-react';
 
 export const Policies = () => {
   const policies = [
@@ -71,13 +71,23 @@ export const Policies = () => {
   ];
 
   return (
-    <section id="policies" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="policies" className="py-20 bg-soft-pink relative overflow-hidden">
+      {/* Floral background decoration */}
+      <Flower2 className="absolute top-20 right-10 w-32 h-32 text-plum/5" />
+      <Flower2 className="absolute bottom-20 left-10 w-28 h-28 text-plum/5" />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
               Our Policies
             </h2>
+            {/* Floral divider */}
+            <div className="flex justify-center gap-2 mb-4">
+              <Flower2 className="w-5 h-5 text-plum/40" />
+              <Flower2 className="w-4 h-4 text-plum/60" />
+              <Flower2 className="w-5 h-5 text-plum/40" />
+            </div>
             <p className="text-lg text-gray-700">
               Important information about ordering, delivery, and our services
             </p>
@@ -90,11 +100,11 @@ export const Policies = () => {
                 <AccordionItem
                   key={policy.id}
                   value={policy.id}
-                  className="bg-white border-2 border-plum/10 rounded-xl overflow-hidden hover:border-plum/30 transition-all duration-300"
+                  className="bg-white border-2 border-plum/20 rounded-xl overflow-hidden hover:border-plum/40 transition-all duration-300 shadow-md"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-blush/10 transition-colors">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline hover:bg-pink-50 transition-colors">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-plum/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center flex-shrink-0">
                         <Icon className="w-6 h-6 text-plum" />
                       </div>
                       <span className="text-xl font-semibold text-plum text-left">
