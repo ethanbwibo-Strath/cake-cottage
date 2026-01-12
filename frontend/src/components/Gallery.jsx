@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { galleryImages } from '../mock';
-import { Filter, Flower2 } from 'lucide-react';
 
 export const Gallery = () => {
   const [filter, setFilter] = useState('all');
@@ -11,21 +10,21 @@ export const Gallery = () => {
 
   return (
     <section id="gallery" className="py-20 bg-soft-pink relative overflow-hidden">
-      {/* Floral background decoration */}
-      <Flower2 className="absolute top-10 right-10 w-28 h-28 text-plum/5" />
-      <Flower2 className="absolute bottom-10 left-10 w-36 h-36 text-plum/5" />
+      {/* Subtle corner floral decoration */}
+      <div className="absolute bottom-10 left-10 w-48 h-48 opacity-8 pointer-events-none">
+        <svg viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 160 Q20 110, 55 90 Q40 55, 75 35 Q90 25, 105 35 Q140 55, 125 90 Q160 110, 160 160" 
+                stroke="#592239" strokeWidth="0.8" fill="none" />
+          <circle cx="45" cy="120" r="13" stroke="#592239" strokeWidth="0.8" fill="none" />
+          <circle cx="80" cy="140" r="18" stroke="#592239" strokeWidth="0.8" fill="none" />
+        </svg>
+      </div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-plum mb-4">
             Our Creations
           </h2>
-          {/* Floral divider */}
-          <div className="flex justify-center gap-2 mb-4">
-            <Flower2 className="w-5 h-5 text-plum/40" />
-            <Flower2 className="w-4 h-4 text-plum/60" />
-            <Flower2 className="w-5 h-5 text-plum/40" />
-          </div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
             Browse our portfolio of handcrafted tiered and bento cakes
           </p>
@@ -34,13 +33,12 @@ export const Gallery = () => {
           <div className="flex justify-center items-center gap-4 flex-wrap">
             <button
               onClick={() => setFilter('all')}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-2 ${
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
                 filter === 'all'
                   ? 'bg-plum text-white shadow-lg'
                   : 'bg-white text-plum border-2 border-plum hover:bg-plum hover:text-white'
               }`}
             >
-              <Flower2 className="w-4 h-4" />
               All Cakes
             </button>
             <button
@@ -82,10 +80,7 @@ export const Gallery = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-plum/90 via-plum/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Flower2 className="w-5 h-5" />
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                  </div>
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   <p className="text-sm text-white/90">{item.description}</p>
                 </div>
               </div>
