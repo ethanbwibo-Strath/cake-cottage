@@ -162,7 +162,7 @@ export const OrderForm = () => {
                     <SelectContent>
                       <SelectItem value="1.5kg">1.5 KG</SelectItem>
                       <SelectItem value="2kg">2.0 KG</SelectItem>
-                      <SelectItem value="custom">Custom Size</SelectItem>
+                      <SelectItem value="Custom">Custom Size</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
