@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 export const Header = () => {
   return (
@@ -9,7 +10,7 @@ export const Header = () => {
           <Link to="/" className="flex items-center gap-3">
             {/* Logo placeholder - simple circle */}
             <div className="w-12 h-12 bg-plum rounded-full flex items-center justify-center overflow-hidden">
-              <span className="text-white font-bold text-xl">C</span>
+              <img src={logo} alt="Cake Cottage Logo" className="w-10 h-10 object-contain" />
             </div>
             <span className="text-2xl font-bold text-plum">Cake.cottag3</span>
           </Link>
