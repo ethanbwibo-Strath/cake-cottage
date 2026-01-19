@@ -17,7 +17,7 @@ def send_order_notification_email(order_data: dict):
         smtp_port = int(os.getenv("SMTP_PORT", "587"))
         smtp_email = os.getenv("SMTP_EMAIL")
         smtp_password = os.getenv("SMTP_PASSWORD")
-        bakery_email = os.getenv("BAKERY_EMAIL", "hello@cakecottag3.co.ke")
+        bakery_email = os.getenv("BAKERY_EMAIL", "ethan.bwibo@strathmore.edu")
 
         if not smtp_email or not smtp_password:
             logger.warning("Email credentials not configured. Skipping email notification.")

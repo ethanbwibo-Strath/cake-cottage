@@ -92,9 +92,9 @@ In `/app/frontend/src/components/OrderForm.jsx`:
 ```
 SMTP_SERVER=smtp.gmail.com
 SMTP_PORT=587
-SMTP_EMAIL=your-email@gmail.com
-SMTP_PASSWORD=your-app-password
-BAKERY_EMAIL=hello@cakecottag3.co.ke
+SMTP_EMAIL=enbwibo@gmail.com
+SMTP_PASSWORD=zurx zzzb psef nmkk
+BAKERY_EMAIL=ethan.bwibo@strathmore.edu
 ```
 
 ## Implementation Steps
