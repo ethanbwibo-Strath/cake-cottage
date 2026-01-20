@@ -2,6 +2,14 @@
 import { cakeImages } from './utils/assetLoader';
 
 export const galleryImages = [
+  
+  {
+    id: 7,
+    title: "Box of Cupcakes (12 pcs)",
+    description: "Assorted flavors with colorful frosting",
+    category: "cupcakes",
+    image: cakeImages["cupcake-box1"]
+  },
   {
     id: 1,
     title: "Rose Garden Tiered Cake",
@@ -24,6 +32,13 @@ export const galleryImages = [
     image: "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80"
   },
   {
+    id: 8,
+    title: "Box of Cupcakes (12 pcs)",
+    description: "Assorted flavors with colorful frosting",
+    category: "cupcakes",
+    image: cakeImages["cupcake-box3"]
+  },
+  {
     id: 4,
     title: "Floral Bento Collection",
     description: "Assorted mini cakes with edible flowers",
@@ -43,6 +58,13 @@ export const galleryImages = [
     description: "Fresh strawberry mini cake",
     category: "bento",
     image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80"
+  },
+  {
+    id: 9,
+    title: "Box of Cupcakes (12 pcs)",
+    description: "Assorted flavors with colorful frosting",
+    category: "cupcakes",
+    image: cakeImages["cupcake-box2"]
   }
 ];
 
