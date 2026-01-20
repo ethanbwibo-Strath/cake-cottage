@@ -1,4 +1,5 @@
 // Mock data for Cake.cottag3 website
+import { cakeImages } from './utils/assetLoader';
 
 export const galleryImages = [
   {
@@ -73,25 +74,25 @@ export const addOns = [
   { 
     name: "Fresh Flowers", 
     price: "500/=",
-    image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400&q=80",
+    image: cakeImages["fresh-flowers"],
     description: "Seasonal blooms arranged beautifully"
   },
   { 
     name: "Edible Prints", 
     price: "800/=",
-    image: "https://images.unsplash.com/photo-1558636508-e0db3814bd1d?w=400&q=80",
+    image: cakeImages["edible-prints"],
     description: "Custom images or designs"
   },
   { 
     name: "Gold Leaf Accents", 
     price: "1000/=",
-    image: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=400&q=80",
+    image: cakeImages["gold-leaf"],
     description: "Elegant metallic touches"
   },
   { 
     name: "Custom Topper", 
     price: "600/=",
-    image: "https://images.unsplash.com/photo-1562440499-64c9a5e55a3e?w=400&q=80",
+    image: cakeImages["custom-topper"],
     description: "Personalized cake decorations"
   }
 ];
