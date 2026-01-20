@@ -51,6 +51,16 @@ export const Gallery = () => {
             >
               Bento Cakes
             </button>
+            <button
+              onClick={() => setFilter('cupcakes')}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
+                filter === 'cupcakes'
+                  ? 'bg-plum text-white shadow-lg'
+                  : 'bg-white text-plum border-2 border-plum hover:bg-plum hover:text-white'
+              }`}
+            >
+              Cupcakes
+            </button>
           </div>
         </div>
 
@@ -70,8 +80,8 @@ export const Gallery = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-plum/90 via-plum/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-sm text-white/90">{item.description}</p>
+                  <h3 className="text-xl text-black font-bold mb-2">{item.title}</h3>
+                  <p className="text-sm text-plum text-white/90">{item.description}</p>
                 </div>
               </div>
             </div>

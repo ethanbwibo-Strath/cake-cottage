@@ -20,7 +20,7 @@ export const galleryImages = [
   {
     id: 2,
     title: "Vanilla Oreo Cake",
-    description: "1.5 KG vanilla cake with Oreo toppings and Gold Topper",
+    description: "Vanilla cake with Oreo toppings and Gold Topper",
     category: "bento",
     image: cakeImages["vanilla-oreo"]
   },

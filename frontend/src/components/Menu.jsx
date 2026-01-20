@@ -74,7 +74,7 @@ export const Menu = () => {
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-plum/80 to-transparent flex items-end">
-                      <p className="text-white font-semibold p-4">{addon.name}</p>
+                      <p className="text-plum font-semibold p-4">{addon.name}</p>
                     </div>
                   </div>
                 )}
