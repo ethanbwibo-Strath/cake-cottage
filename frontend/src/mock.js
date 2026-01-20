@@ -12,17 +12,17 @@ export const galleryImages = [
   },
   {
     id: 1,
-    title: "Rose Garden Tiered Cake",
-    description: "3-tier vanilla cake with fresh roses",
+    title: "Vanilla/Strawberry Tiered Cake",
+    description: "3-tier cake with purple ribbons",
     category: "tiered",
-    image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=800&q=80"
+    image: cakeImages["vanilla-strawberry-tiered"]
   },
   {
     id: 2,
-    title: "Chocolate Bento Cake",
-    description: "Mini chocolate cake with gold accents",
+    title: "Vanilla Oreo Cake",
+    description: "1.5 KG vanilla cake with Oreo toppings and Gold Topper",
     category: "bento",
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80"
+    image: cakeImages["vanilla-oreo"]
   },
   {
     id: 3,
