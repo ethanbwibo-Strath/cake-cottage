@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
+import icon from '../assets/icon.png';
 
 export const Header = () => {
   return (
@@ -8,9 +9,8 @@ export const Header = () => {
       <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            {/* Logo placeholder - simple circle */}
             <div className="w-12 h-12 bg-plum rounded-full flex items-center justify-center overflow-hidden">
-              <img src={logo} alt="Cake Cottage Logo" className="w-10 h-10 object-contain" />
+              <img src={icon} alt="Cake Cottage Logo" className="w-10 h-10 object-contain" />
             </div>
             <span className="text-2xl font-bold text-plum">Cake.cottag3</span>
           </Link>
